@@ -34,4 +34,9 @@ class ProductRepository
     {
         return $this->products;
     }
+
+    public function findProductById($id): ?Product
+    {
+        $this->products->firstWhere('productId', Uuid::fromString($id));
+    }
 }

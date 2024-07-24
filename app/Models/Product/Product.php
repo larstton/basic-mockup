@@ -2,12 +2,14 @@
 
 namespace App\Models\Product;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Ramsey\Uuid\UuidInterface;
 
 class Product
 {
-    private UuidInterface $productId;
-    private string $name;
+    use HasFactory;
+    public UuidInterface $productId;
+    public string $name;
     /** @var Cover[] */
     private array $covers;
 
